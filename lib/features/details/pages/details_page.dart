@@ -20,7 +20,7 @@ class DetailsPage extends StatelessWidget {
         backgroundColor: Colors.purple,
       ),
       body: BlocProvider(
-        create: (context) => DetailsCubit(ItemsRepository()),
+        create: (context) => DetailsCubit(ItemsRepository())..getItemWithID(id),
         child: BlocBuilder<DetailsCubit, DetailsState>(
           builder: (context, state) {
             final itemModel = state.itemModel;
